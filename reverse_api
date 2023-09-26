@@ -1,0 +1,30 @@
+# coding=utf-8
+import openai
+import json
+import os
+import requests
+
+os.environ["http_proxy"] = "http://127.0.0.1:7890"
+os.environ["https_proxy"] = "http://127.0.0.1:7890"
+from revChatGPT.V1 import Chatbot
+
+chatbot = Chatbot(config={
+  "access_token": ""})
+
+prompt = "how many beaches does portugal have?"
+response = ""
+
+for data in chatbot.ask(
+  prompt
+):
+    response = data["message"]
+
+print(response)
+response = ""
+
+for data in chatbot.ask(
+  prompt
+):
+    response = data["message"]
+
+print(response)
